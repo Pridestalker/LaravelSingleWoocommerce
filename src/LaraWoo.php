@@ -1,5 +1,7 @@
 <?php
 
+namespace Elderbraum\LaraSingleWoo;
+
 class LaraWoo
 {
     /**
