@@ -6,7 +6,6 @@ trait Customer
 {
 	public function getCustomers($params = [])
 	{
-		parent::connect();
-		return parent::$_wc->get('customers', $params);
+		return parent::connect()->get('customers', $params);
 	}
 }
