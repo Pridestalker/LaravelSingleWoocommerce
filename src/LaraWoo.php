@@ -7,7 +7,7 @@ class LaraWoo
     /**
 	 * @var $_wc  \Automattic\WooCommerce\Client
 	 */
-	protected $_wc = null;
+	protected static $_wc = null;
 	
 	public function construct() : void
 	{
