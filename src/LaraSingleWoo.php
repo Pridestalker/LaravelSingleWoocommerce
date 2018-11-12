@@ -8,7 +8,6 @@
 
 namespace Elderbraum\LaraSingleWoo;
 
-use Automattic\WooCommerce\Client;
 use Elderbraum\LaraSingleWoo\Traits\Customer;
 
 

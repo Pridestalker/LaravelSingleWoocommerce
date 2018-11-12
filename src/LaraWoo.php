@@ -2,6 +2,8 @@
 
 namespace Elderbraum\LaraSingleWoo;
 
+use Automattic\WooCommerce\Client;
+
 class LaraWoo
 {
     /**
