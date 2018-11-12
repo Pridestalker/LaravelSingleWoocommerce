@@ -48,6 +48,12 @@ class LaraSingleWoo
 	
 	protected function setWC()
 	{
+		try {
+			$this->checkConfig();
+		} catch (\Exception $e)
+		{
+			print_r($e->getMessage());
+		}
 		if( !$this->_wc )
 		{
 			$this->_wc = new Client(
@@ -63,4 +69,8 @@ class LaraSingleWoo
 		}
 	}
 	
+	protected function checkConfig()
+	{
+		if( !config('larasingle.url')) throw new \Exception();
+	}
 }
