@@ -30,7 +30,8 @@ class LaraSingleWoo
 	 */
 	public function index()
 	{
-		// $this->setWC();
+		if( !$this->_wc ) 
+			$this->connect();
 		return $this->_wc->get('');
 	}
 	
@@ -41,7 +42,8 @@ class LaraSingleWoo
 	 */
 	public function getProducts($params = [])
 	{
-		$this->setWC();
+		if( !$this->_wc ) 
+			$this->connect();
 		return $this->_wc->get('products', $params);
 	}
 	
@@ -54,10 +56,16 @@ class LaraSingleWoo
 	 */
 	public function getProduct( $product_id = null, $params = [])
 	{
-		$this->setWC();
+		if( !$this->_wc ) 
+			$this->connect();
 		return $this->_wc->get("products/{$product_id}", $params);
 	}
 	
+	public function connect()
+	{
+		$this->setWC();
+	}
+
 	protected function setWC()
 	{
 		if( !$this->_wc )
