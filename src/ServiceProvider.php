@@ -38,6 +38,10 @@ class ServiceProvider extends LaravelProvider
 		});
 		
 		$this->app->alias(LaraSingleWoo::class, 'LaraSingleWoo');
+
+		$this->app->bind('LaraSingleWoo', function() {
+			return new LaraSingleWoo();
+		});
 	}
 	
 }
