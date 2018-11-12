@@ -20,7 +20,7 @@ class LaraSingleWoo
 	
 	public function construct() : void
 	{
-		if( !$this->wc )
+		if( !$this->_wc )
 		{
 			$this->_wc = new Client(
 				config('larasingle.url'),
@@ -43,6 +43,23 @@ class LaraSingleWoo
 	public function products(  )
 	{
 	
+	}
+	
+	protected function setWC()
+	{
+		if( !$this->_wc )
+		{
+			$this->_wc = new Client(
+				config('larasingle.url'),
+				config('larasingle.key'),
+				config('larasingle.secret'),
+				[
+					'wp_api'                =>  config('larasingle.wp_api'),
+					'version'               =>  config('larasingle.version'),
+					'query_string_auth'     =>  config('larasingle.query_string_auth')
+				]
+			);
+		}
 	}
 	
 }
