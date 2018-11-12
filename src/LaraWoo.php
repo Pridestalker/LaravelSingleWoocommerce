@@ -16,9 +16,9 @@ class LaraWoo
 		$this->setWC();
     }
     
-    public function connect()
+    public static function connect()
 	{
-		$this->setWC();
+		(new self())->setWC();
 	}
 
 	protected function setWC()
