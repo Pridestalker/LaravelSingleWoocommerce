@@ -35,25 +35,37 @@ class LaraSingleWoo
 		}
 	}
 	
+	/**
+	 *
+	 * @deprecated
+	 * @return array
+	 */
 	public function index()
 	{
 		$this->setWC();
 		return $this->_wc->get('');
 	}
 	
-	public function products(  )
+	/**
+	 * Returns an array of objects from the WC api
+	 *
+	 * @return array
+	 */
+	public function getProducts($params = [])
 	{
+		$this->setWC();
+		return $this->_wc->get('products', $params);
+	}
 	
+	public function getProduct( $product_id = null, $params = [])
+	{
+		$this->setWC();
+		return $this->_wc->get("products/{$product_id}", $params);
 	}
 	
 	protected function setWC()
 	{
-		try {
-			$this->checkConfig();
-		} catch (\Exception $e)
-		{
-			print_r($e->getMessage());
-		}
+		if( !$this->checkConfig() ) return false;
 		if( !$this->_wc )
 		{
 			$this->_wc = new Client(
@@ -71,6 +83,14 @@ class LaraSingleWoo
 	
 	protected function checkConfig()
 	{
-		if( !config('larasingle.url')) throw new \Exception();
+		if( !config('larasingle.url')) return false;
+		if( !config('larasingle.key')) return false;
+		if( !config('larasingle.secret')) return false;
+		if( !config('larasingle.wp_api')) return false;
+		if( !config('larasingle.version')) return false;
+		if( !config('larasingle.query_string_auth')) return false;
+		
+		
+		return true;
 	}
 }
