@@ -18,7 +18,7 @@ class LaraWoo
     
     public static function connect()
 	{
-		(new self())->setWC();
+		return (new self())->setWC();
 	}
 
 	protected function setWC()
@@ -35,7 +35,9 @@ class LaraWoo
 					'query_string_auth'     =>  config('larasingle.query_string_auth')
 				]
 			);
-		}
+        }
+        
+        return $this->_wc;
 	}
 	
 	protected function checkConfig()
