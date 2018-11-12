@@ -65,7 +65,6 @@ class LaraSingleWoo
 	
 	protected function setWC()
 	{
-		if( !$this->checkConfig() ) return false;
 		if( !$this->_wc )
 		{
 			$this->_wc = new Client(
