@@ -10,9 +10,7 @@ trait Products
 	 */
 	public function getProducts($params = [])
 	{
-		if( !$this->_wc ) 
-			$this->connect();
-		return $this->_wc->get('products', $params);
+		return parent::connect()->get('products', $params);
 	}
 	
 	/**
@@ -24,8 +22,8 @@ trait Products
 	 */
 	public function getProduct($product_id = null, $params = [])
 	{
-		if( !$this->_wc ) 
-			$this->connect();
-		return $this->_wc->get("products/{$product_id}", $params);
+		$args = $params;
+		$args['id'] = $product_id;
+        return parent::connect()->get('products', $args);
 	}
 }
