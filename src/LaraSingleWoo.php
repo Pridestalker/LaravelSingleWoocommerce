@@ -9,10 +9,11 @@
 namespace Elderbraum\LaraSingleWoo;
 
 use Automattic\WooCommerce\Client;
+use Elderbraum\LaraSingleWoo\Traits\Customer;
 
 class LaraSingleWoo
 {
-	
+	use Customer;
 	/**
 	 * @var $_wc  \Automattic\WooCommerce\Client
 	 */
@@ -54,13 +55,28 @@ class LaraSingleWoo
 	 * @param array $params
 	 * @return array
 	 */
-	public function getProduct( $product_id = null, $params = [])
+	public function getProduct($product_id = null, $params = [])
 	{
 		if( !$this->_wc ) 
 			$this->connect();
 		return $this->_wc->get("products/{$product_id}", $params);
 	}
+
+	public function getCoupons($params = [])
+	{
+		if( !$this->_wc ) 
+			$this->connect();
+		return $this->_wc->get('coupons', $params);
+	}
 	
+	public function getCoupon($coupon_id = null, $params = [])
+	{
+		$args = $params;
+		$args['id'] = $coupon_id;
+		return $this->getCoupons($args);
+	}
+
+
 	public function connect()
 	{
 		$this->setWC();

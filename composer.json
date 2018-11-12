@@ -19,6 +19,10 @@
             "email": "mitch@hijlkema.xyz"
         }
     ],
+    "keywords": [
+        "laravel",
+        "WooCommerce API"
+    ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
