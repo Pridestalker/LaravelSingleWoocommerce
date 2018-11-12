@@ -37,6 +37,7 @@ class LaraSingleWoo
 	
 	public function index()
 	{
+		$this->setWC();
 		return $this->_wc->get('');
 	}
 	
