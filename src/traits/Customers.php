@@ -1,8 +1,7 @@
 <?php
-
 namespace Elderbraum\LaraSingleWoo\Traits;
 
-trait Customer
+trait Customers
 {
 	public function getCustomers($params = [])
 	{
