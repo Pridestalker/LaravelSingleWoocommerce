@@ -16,9 +16,10 @@ class LaraWoo
 		$this->setWC();
     }
     
-    public static function connect()
+    public function connect()
 	{
-		return (new self())->setWC();
+		return $this->setWC();
+		// return (new self())->setWC();
 	}
 
 	protected function setWC()
@@ -51,5 +52,10 @@ class LaraWoo
 		
 		
 		return true;
+	}
+
+	protected function WC()
+	{
+		return $this->_wc;
 	}
 }

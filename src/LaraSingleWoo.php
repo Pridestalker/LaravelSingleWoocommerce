@@ -15,9 +15,9 @@ use Elderbraum\LaraSingleWoo\Traits\Products;
 
 class LaraSingleWoo extends LaraWoo
 {
-	use Customers,
-		Coupons,
-		Products;
+	use Customers;
+		// Coupons,
+		// Products;
 
 	/**
 	 *
