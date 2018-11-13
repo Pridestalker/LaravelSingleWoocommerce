@@ -26,8 +26,17 @@ trait Products
         $this->connect();
         return $this->WC()->get("products/{$product_id}", $params);
     }
+	
+	public function postProduct($params = [])
+	{
+		$this->connect();
+		return $this->WC()->post( 'products', $params);
+    }
 
 	abstract function connect();
-
+	
+	/**
+	 * @return \Automattic\WooCommerce\Client::class
+	 */
 	abstract function WC();
 }
