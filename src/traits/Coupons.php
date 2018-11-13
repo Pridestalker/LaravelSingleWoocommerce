@@ -11,10 +11,8 @@ trait Coupons
 	
 	public function getCoupon($coupon_id = null, $params = [])
 	{
-		$args = $params;
-        $args['id'] = $coupon_id;
         $this->connect();
-		return $this->WC()->get('coupons', $args);
+		return $this->WC()->get("coupons/{$coupon_id}", $params);
     }
     
 	abstract function connect();

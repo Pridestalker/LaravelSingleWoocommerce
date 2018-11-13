@@ -11,10 +11,8 @@ trait Orders
 	
 	public function getOrder($order_id = null, $params = [])
 	{
-		$args = $params;
-        $args['id'] = $order_id;
         $this->connect();
-		return $this->WC()->get('orders', $args);
+		return $this->WC()->get("orders/{$order_id}", $params);
     }
         
 	abstract function connect();

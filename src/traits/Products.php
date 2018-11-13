@@ -23,10 +23,8 @@ trait Products
 	 */
 	public function getProduct($product_id = null, $params = [])
 	{
-		$args = $params;
-        $args['id'] = $product_id;
         $this->connect();
-        return $this->WC()->get('products', $args);
+        return $this->WC()->get("products/{$product_id}", $params);
     }
 
 	abstract function connect();

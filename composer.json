@@ -1,6 +1,11 @@
 {
     "name": "elderbraum/larasinglewoo",
     "description": "A Laravel WooCommerce Facade to make easy use of the WooCommerce API",
+    "version": "1.0.0",
+    "keywords": [
+        "laravel",
+        "WooCommerce API"
+    ],
     "require": {
         "automattic/woocommerce": "^2.0",
         "php": "^7.2"
@@ -8,8 +13,8 @@
     "require-dev": {
         "roave/security-advisories": "dev-master",
         "phpunit/phpunit": "*",
-        "squizlabs/php_codesniffer": "3.*",
-        "laravel/laravel": "5.7.*"
+        "laravel/laravel": "5.7.*",
+        "orchestra/testbench": "*"
     },
     "readme": "README.md",
     "license": "LGPL-3.0-or-later",
@@ -19,14 +24,15 @@
             "email": "mitch@hijlkema.xyz"
         }
     ],
-    "keywords": [
-        "laravel",
-        "WooCommerce API"
-    ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Elderbraum\\LaraSingleWoo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elderbraum\\LaraSingleWoo\\Tests\\": "tests"
         }
     },
     "extra": {

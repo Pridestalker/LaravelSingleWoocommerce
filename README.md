@@ -39,10 +39,17 @@ copy the `larasinglewoo/config` files to your `config` with the following comman
 ```sh
 php artisan vendor:publish --provider="Elderbraum\LaraSingleWoo\ServiceProvider"
 ```
+If you do not want to publish the config, you can also add the following lines to your `.env` file.
+```env
+API_TARGET="https://example.com"
+API_CONSUMER_KEY="ck_xxxxxxxx"
+API_CONSUMER_SECRET="cs_xxxxxxxx"
+```
 
 ## Usage
 
-You can now use the package. The supported calls are
+You can now use the package. The supported calls are:
+
 ```php
 LaraSingleWoo::getProducts() # Returns an object with all products
 LaraSingleWoo::getProducts($product_id) # Returns the product on $product_id
