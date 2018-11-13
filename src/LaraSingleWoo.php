@@ -11,13 +11,15 @@ namespace Elderbraum\LaraSingleWoo;
 use Elderbraum\LaraSingleWoo\Traits\Customers;
 use Elderbraum\LaraSingleWoo\Traits\Coupons;
 use Elderbraum\LaraSingleWoo\Traits\Products;
+use Elderbraum\LaraSingleWoo\Traits\Orders;
 
 
 class LaraSingleWoo extends LaraWoo
 {
-	use Customers;
-		// Coupons,
-		// Products;
+	use Customers,
+		Coupons,
+		Products,
+		Orders;
 
 	/**
 	 *
