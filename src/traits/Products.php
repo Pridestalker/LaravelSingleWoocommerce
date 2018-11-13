@@ -10,7 +10,8 @@ trait Products
 	 */
 	public function getProducts($params = [])
 	{
-		return parent::connect()->get('products', $params);
+        $this->connect();
+		return $this->WC()->get('products', $params);
 	}
 	
 	/**
@@ -23,7 +24,12 @@ trait Products
 	public function getProduct($product_id = null, $params = [])
 	{
 		$args = $params;
-		$args['id'] = $product_id;
-        return parent::connect()->get('products', $args);
-	}
+        $args['id'] = $product_id;
+        $this->connect();
+        return $this->WC()->get('products', $args);
+    }
+
+	abstract function connect();
+
+	abstract function WC();
 }

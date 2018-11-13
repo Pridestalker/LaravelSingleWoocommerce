@@ -19,7 +19,6 @@ class LaraWoo
     public function connect()
 	{
 		return $this->setWC();
-		// return (new self())->setWC();
 	}
 
 	protected function setWC()
@@ -49,7 +48,6 @@ class LaraWoo
 		if( !config('larasingle.wp_api')) return false;
 		if( !config('larasingle.version')) return false;
 		if( !config('larasingle.query_string_auth')) return false;
-		
 		
 		return true;
 	}
