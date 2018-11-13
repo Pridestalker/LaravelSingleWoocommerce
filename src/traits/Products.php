@@ -32,6 +32,12 @@ trait Products
 		$this->connect();
 		return $this->WC()->post( 'products', $params);
     }
+    
+    public function patchProduct($product_id, $params = [])
+    {
+	    $this->connect();
+	    return $this->WC()->post( "products/{$product_id}?_method=put", $params);
+    }
 
 	abstract function connect();
 	
