@@ -19,6 +19,15 @@ trait Pagination {
 		$this->request = $this->WC()->http->getRequest();
 		$this->response = $this->WC()->http->getResponse();
 	}
+	
+	public function getRequest() {
+		return $this->request;
+	}
+	
+	public function getResponse() {
+		return $this->response;
+	}
+	
 	/**
 	 * @return \Automattic\WooCommerce\Client::class
 	 */
