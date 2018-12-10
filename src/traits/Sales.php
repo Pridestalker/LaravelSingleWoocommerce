@@ -16,6 +16,8 @@ trait Sales
         return $this->WC()->get('reports/top_sellers', $params);
     }
 	abstract function connect();
-
+	/**
+	 * @return \Automattic\WooCommerce\Client::class
+	 */
 	abstract function WC();
 }

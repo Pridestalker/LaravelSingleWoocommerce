@@ -16,6 +16,8 @@ trait Customers
 	}
 
 	abstract function connect();
-
+	/**
+	 * @return \Automattic\WooCommerce\Client::class
+	 */
 	abstract function WC();
 }
