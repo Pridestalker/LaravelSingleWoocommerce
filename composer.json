@@ -1,7 +1,7 @@
 {
     "name": "elderbraum/larasinglewoo",
     "description": "A Laravel WooCommerce Facade to make easy use of the WooCommerce API",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "keywords": [
         "laravel",
         "WooCommerce API"
