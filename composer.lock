@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eeb59a4f43ba0d5223dc86ff89c7088",
+    "content-hash": "4cbad2aa2f6235cad87ebb74bd671dbc",
     "packages": [
         {
             "name": "automattic/woocommerce",
-            "version": "2.0.1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woocommerce/wc-api-php.git",
-                "reference": "2b70becbe2da051853d27aa2ee23cf126bcc96c5"
+                "reference": "a71aa95cc3de3f1d68c6303525d03c0557a96137"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woocommerce/wc-api-php/zipball/2b70becbe2da051853d27aa2ee23cf126bcc96c5",
-                "reference": "2b70becbe2da051853d27aa2ee23cf126bcc96c5",
+                "url": "https://api.github.com/repos/woocommerce/wc-api-php/zipball/a71aa95cc3de3f1d68c6303525d03c0557a96137",
+                "reference": "a71aa95cc3de3f1d68c6303525d03c0557a96137",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,11 @@
                 "api",
                 "woocommerce"
             ],
-            "time": "2018-03-29T18:43:43+00:00"
+            "support": {
+                "issues": "https://github.com/woocommerce/wc-api-php/issues",
+                "source": "https://github.com/woocommerce/wc-api-php/tree/master"
+            },
+            "time": "2019-01-16T20:28:40+00:00"
         }
     ],
     "packages-dev": [
@@ -5180,5 +5184,6 @@
     "platform": {
         "php": "^7.2"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }
